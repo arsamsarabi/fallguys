@@ -16,9 +16,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/arsamsarabi/fallguys.git"
+    "url": "git+ssh://git@github.com/arsamsarabi/fallguys-names.git"
   },
-  "homepage": "https://github.com/arsamsarabi/fallguys",
+  "homepage": "https://github.com/arsamsarabi/fallguys-names",
   "author": "Arsam Sarabi <arsamsarabi@me.com> (https://github.com/arsamsarabi)",
   "scripts": {
     "dev": "tsc -w",
@@ -32,7 +32,7 @@
     "registry": "https://registry.npmjs.org/"
   },
   "bugs": {
-    "url": "https://github.com/arsamsarabi/fallguys/issues"
+    "url": "https://github.com/arsamsarabi/fallguys-names/issues"
   },
   "directories": {
     "lib": "lib"
