@@ -1,0 +1,15 @@
+{
+  "name": "fallguys",
+  "description": "Get random Fall Guys names",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "tsc -w",
+    "build": "tsc",
+    "prepack": "yarn build"
+  },
+  "devDependencies": {
+    "typescript": "^4.3.5"
+  }
+}
