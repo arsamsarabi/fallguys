@@ -1,15 +1,40 @@
 {
-  "name": "fallguys",
+  "name": "@arsamsarabi/fallguys",
   "description": "Get random Fall Guys names",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./lib/index.js",
+  "types": "./lib/index.d.ts",
+  "files": [
+    "lib"
+  ],
+  "keywords": [
+    "name",
+    "generator",
+    "random",
+    "fallguys"
+  ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/arsamsarabi/fallguys.git"
+  },
+  "homepage": "https://github.com/arsamsarabi/fallguys",
+  "author": "Arsam Sarabi <arsamsarabi@me.com> (https://github.com/arsamsarabi)",
   "scripts": {
     "dev": "tsc -w",
     "build": "tsc",
-    "prepack": "yarn build"
+    "prepublishOnly": "yarn build && yarn pack"
   },
   "devDependencies": {
     "typescript": "^4.3.5"
+  },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
+  "bugs": {
+    "url": "https://github.com/arsamsarabi/fallguys/issues"
+  },
+  "directories": {
+    "lib": "lib"
   }
 }
