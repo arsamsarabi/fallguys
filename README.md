@@ -31,7 +31,7 @@ $ yarn add fallguys-names
 import fallguys from 'fallguys-names'
 
 // fallguys-names exports a function by default that generates a random name (or more!)
-const myAwesomeNewFallGuysName: string = fallguys()
+const myAwesomeNewFallGuysName: string = fallguys(config)
 ```
 
 ## Configuration options
