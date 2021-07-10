@@ -1,2 +1,1 @@
-declare const _default: () => string;
-export default _default;
+export { default, default as fallguys } from "./fallguys";
