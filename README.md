@@ -28,10 +28,16 @@ $ yarn add fallguys-names
 
 ```javascript
 // In your project, import from 'fallguys-names'
-import fallguys from 'fallguys-names'
+import fallguys, { FGConfig } from 'fallguys-names'
 
 // fallguys-names exports a function by default that generates a random name (or more!)
-const myAwesomeNewFallGuysName: string = fallguys(config)
+const myAwesomeNewFallGuysName: string = fallguys() // e.g. "Clever Streaming Knight"
+
+const config: FGConfig = {
+  numberOfNames: 2,
+}
+
+const myArrayOfNames: string[] = fallguys(config) // e.g. ["Steady Yeeted Climber", "Bonkers Bumbling Monster"]
 ```
 
 ## Configuration options
@@ -46,7 +52,7 @@ Optionally you can pass an object as an argument, with any of the following fiel
 
 
 ### numberOfNames
-The number of names that the function will return. **Important!** by increasing the number of names to more than one, the function will return an array of numbers
+The number of names that the function will return. **Important!** by increasing the number of names to more than one, the function will return an array of names
 
 ### mix
 You may supply your own choice of words to mix with the original names in the library.
