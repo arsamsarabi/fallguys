@@ -1,16 +1,16 @@
 {
   "name": "fallguys-names",
-  "description": "Get random Fall Guys names",
-  "version": "1.1.2",
+  "description": "Fully customizable what-three-words generator with a default set of fallguys names.",
+  "version": "2.0.1",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
     "lib"
   ],
   "keywords": [
-    "name",
-    "generator",
-    "random",
+    "what-three-words",
+    "what three words",
+    "random generator",
     "fallguys"
   ],
   "license": "MIT",

@@ -1,43 +1,34 @@
-import firstnames from './constants/firstnames'
-import middlenames from './constants/middlenames'
-import lastnames from './constants/lastnames'
+import { DEFAULT_FIRSTS, DEFAULT_SECONDS, DEFAULT_THIRDS } from './constants'
+import { getRandomWords, mergeNames } from './utils'
 
-import { getRandomArrayValue, mergeNames } from './utils'
-
-export type NamesModifiers = {
-  firstnames?: string[]
-  middlenames?: string[]
-  lastnames?: string[]
+export type WordModifiers = {
+  firsts?: string[]
+  seconds?: string[]
+  thirds?: string[]
 }
 
 export type FGConfig = {
-  numberOfNames?: number
-  mix?: NamesModifiers
-  replace?: NamesModifiers
-}
-
-const getRandomName = (fn: string[], mn: string[], ln: string[]): string => {
-  return `${getRandomArrayValue(fn)} ${getRandomArrayValue(
-    mn
-  )} ${getRandomArrayValue(ln)}`
+  quantity?: number
+  mix?: WordModifiers
+  replace?: WordModifiers
 }
 
 const main = (args?: FGConfig): string | string[] => {
   const result: string[] = []
 
   if (args) {
-    const { numberOfNames = 1, mix = undefined, replace = undefined } = args
-    const fn = mergeNames(firstnames, replace?.firstnames, mix?.firstnames)
-    const mn = mergeNames(middlenames, replace?.middlenames, mix?.middlenames)
-    const ln = mergeNames(lastnames, replace?.lastnames, mix?.lastnames)
+    const { quantity = 1, mix = undefined, replace = undefined } = args
+    const firsts = mergeNames(DEFAULT_FIRSTS, replace?.firsts, mix?.firsts)
+    const seconds = mergeNames(DEFAULT_SECONDS, replace?.seconds, mix?.seconds)
+    const thirds = mergeNames(DEFAULT_THIRDS, replace?.thirds, mix?.thirds)
 
-    for (let i = 0; i < numberOfNames; i++) {
-      result.push(getRandomName(fn, mn, ln))
+    for (let i = 0; i < quantity; i++) {
+      result.push(getRandomWords(firsts, seconds, thirds))
     }
 
     return result
   } else {
-    return getRandomName(firstnames, middlenames, lastnames)
+    return getRandomWords(DEFAULT_FIRSTS, DEFAULT_SECONDS, DEFAULT_THIRDS)
   }
 }
 

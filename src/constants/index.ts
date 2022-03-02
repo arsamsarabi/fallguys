@@ -1,3 +1,3 @@
-export { default as firstnames } from './firstnames'
-export { default as middlenames } from './middlenames'
-export { default as lastnames } from './lastnames'
+export { default as DEFAULT_FIRSTS } from './defaultfirsts'
+export { default as DEFAULT_SECONDS } from './defaultSeconds'
+export { default as DEFAULT_THIRDS } from './defaultThirds'
