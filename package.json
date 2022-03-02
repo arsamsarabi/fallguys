@@ -27,15 +27,19 @@
     "prepare": "husky install",
     "eslint": "eslint src --fix",
     "prettier": "prettier --write src",
-    "lint": "yarn prettier && yarn eslint --quiet"
+    "lint": "yarn prettier && yarn eslint --quiet",
+    "test": "jest --coverage"
   },
   "devDependencies": {
+    "@types/jest": "^27.4.1",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "eslint": "^7.30.0",
     "husky": "^7.0.1",
+    "jest": "^27.5.1",
     "lint-staged": "^11.0.0",
     "prettier": "^2.3.2",
+    "ts-jest": "^27.1.3",
     "typescript": "^4.3.5"
   },
   "publishConfig": {

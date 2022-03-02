@@ -11,25 +11,25 @@ export type FGConfig = {
   quantity?: number
   mix?: WordModifiers
   replace?: WordModifiers
+  separator?: string
 }
 
 const main = (args?: FGConfig): string | string[] => {
+  const quantity = args?.quantity || 1
+  const mix = args?.mix
+  const replace = args?.replace
+  const separator = args?.separator || ' '
   const result: string[] = []
 
-  if (args) {
-    const { quantity = 1, mix = undefined, replace = undefined } = args
-    const firsts = mergeNames(DEFAULT_FIRSTS, replace?.firsts, mix?.firsts)
-    const seconds = mergeNames(DEFAULT_SECONDS, replace?.seconds, mix?.seconds)
-    const thirds = mergeNames(DEFAULT_THIRDS, replace?.thirds, mix?.thirds)
+  const firsts = mergeNames(DEFAULT_FIRSTS, replace?.firsts, mix?.firsts)
+  const seconds = mergeNames(DEFAULT_SECONDS, replace?.seconds, mix?.seconds)
+  const thirds = mergeNames(DEFAULT_THIRDS, replace?.thirds, mix?.thirds)
 
-    for (let i = 0; i < quantity; i++) {
-      result.push(getRandomWords(firsts, seconds, thirds))
-    }
-
-    return result
-  } else {
-    return getRandomWords(DEFAULT_FIRSTS, DEFAULT_SECONDS, DEFAULT_THIRDS)
+  while (result.length < quantity) {
+    result.push(getRandomWords(firsts, seconds, thirds, separator))
   }
+
+  return result.length === 1 ? result[0] : result
 }
 
 export default main
