@@ -1,7 +1,7 @@
 {
   "name": "fallguys-names",
   "description": "Fully customizable what-three-words generator with a default set of fallguys names.",
-  "version": "2.0.1",
+  "version": "2.1.1",
   "main": "./lib/index.js",
   "types": "./lib/index.d.ts",
   "files": [
